@@ -1,0 +1,11 @@
+This assignment is last asm_image, except freeform.
+
+You have to write an image filter in assembly. 50% of your grade will be
+technical difficulty, 50% will be on artistic merit. You can start with any
+image you like, and I suggest crafting your filter code to match the image you
+choose.
+
+Upload the before and after onto Canvas. You can work with a partner on this
+assignment, but then each of you will need to do a filter, and so upload all
+three images (original, original + filter1, original + filter1 + filter2).
+
