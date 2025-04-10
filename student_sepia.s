@@ -15,7 +15,7 @@ student_sepia:
   loop:
   VLDMIA R0!,{d0}
   CMP R0, R3
-  VMUL.U8 d0,d0
+  VADD.U8 d0,d0
   VSTMIA R1!,{d0}
   BLE loop
 
