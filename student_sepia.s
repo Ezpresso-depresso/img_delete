@@ -12,12 +12,13 @@ student_sepia:
   ADD R3, R0, R7
 
   loop:
-  VLDMIA R0!,{d0-d3}
-  CMP R0,R3
-  VADD.U8 q0,q0,q1
-  VADD.U8 q1,q1,q1
-  VSTMIA R1!, {d0-d3}
+  VLDMIA R0!,{d0-d3} //1024 bit load
+  CMP R0, R3
+  VADD.U8 q0,q0,q1 //First 128 bits right shift one bit, in 8 bit channels
+  VADD.U8 q1,q1,q1//Next 128 bits
+  VSTMIA R1!,{d0-d3} //1024 bit store
   BLE loop
+
 
 quit:
         POP {R4-R12}         @Restore R4 through R12 for the calling function
