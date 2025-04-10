@@ -20,7 +20,7 @@ student_sepia:
   VADD.U8 d2,d2,d2
   VADD.U8 d0,d0,d1 
   VADD.U8 d0,d0,d2
-  VSHR.U8 d0,d2,#2
+  VSHR.U8 d0,d2,#1
   VMOV.U8 d1,d0
   VMOV.U8 d2,d0
   VSTMIA R1!,{d0-d2}
