@@ -6,17 +6,19 @@ student_sepia:
 
         @Write your code here
   @void sepia(unsigned char *in,unsigned char *out, int width, int height)
-  MULS R7, R2, R3 //Total bytes of image
+  MULS R7, R2, R3
   BLE quit
   ADD R7, R7, R7, LSL #1
   ADD R3, R0, R7
+  MOV R7, #40
 
   loop:
-  VLDMIA R0!,{d0-d3} //1024 bit load
+  VLDMIA R0!,{d0-d2}
   CMP R0, R3
-  VADD.U8 q0,q0,q0 //First 128 bits right shift one bit, in 8 bit channels
-  VADD.U8 q1,q1,q1//Next 128 bits
-  VSTMIA R1!,{d0-d3} //1024 bit store
+  VADD.U8 d0,d0,d0 
+  VADD.U8 d1,d1,d0
+  VADD.U8 d2,d2,d0
+  VSTMIA R1!,{d0-d2}
   BLE loop
 
 
