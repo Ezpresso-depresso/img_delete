@@ -13,12 +13,10 @@ student_sepia:
   MOV R7, #40
 
   loop:
-  VLDMIA R0!,{d0-d2}
+  VLDMIA R0!,{d0}
   CMP R0, R3
-  VMOV.U8 d0,d2
-  VMOV.U8 d1,d1
-  VMOV.U8 d2,d0
-  VSTMIA R1!,{d0-d2}
+  VMUL.U8 d0,d0
+  VSTMIA R1!,{d0}
   BLE loop
 
 
